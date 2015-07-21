@@ -73,3 +73,8 @@ function s
     set dir (pwd)
     echo $name $dir >> $fishmarks_file
 end
+
+# define auto-completions
+complete -c j -c p --description Marks --no-files -a "
+    (cat $fishmarks_file | cut -f 1 -d ' ')
+    "
